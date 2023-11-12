@@ -5,6 +5,7 @@
 
 from models.base_model import BaseModel
 
+
 class Amenity(BaseModel):
     """Represent the amenity class:
 

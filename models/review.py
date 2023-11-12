@@ -5,6 +5,7 @@
 
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """Represent the review class:
         place_id (str): The Place id.
