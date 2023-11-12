@@ -125,3 +125,6 @@ class HBNBCommand(cmd.Cmd):
                 if obj_name == command[0]:
                     instances += [value.__str__()]
             print(instances)
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
