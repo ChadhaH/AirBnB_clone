@@ -10,6 +10,7 @@ from datetime import datetime
 from time import sleep
 from models.amenity import Amenity
 
+
 class TestAmenity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Amenity class."""
 
@@ -34,7 +35,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertIn("name", dir(Amenity()))
         self.assertNotIn("name", am_1.__dict__)
 
-     def test_two_amenities_unique_ids(self):
+    def test_two_amenities_unique_ids(self):
         am_2 = Amenity()
         am_3 = Amenity()
         self.assertNotEqual(am_2.id, am_3.id)
@@ -75,10 +76,11 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(am1.id, "345")
         self.assertEqual(am1.created_at, dat)
         self.assertEqual(am1.updated_at, dat)
-    
+        
     def test_instantiation_with_None_kwargs(self):
         with self.assertRaises(TypeError):
             Amenity(id=None, created_at=None, updated_at=None)
+
 
 class TestAmenity_save(unittest.TestCase):
     """
@@ -130,6 +132,7 @@ class TestAmenity_save(unittest.TestCase):
         am1id = "Amenity." + am1.id
         with open("file.json", "r") as fc:
             self.assertIn(am1id, f.read())
+
 
 class TestAmenity_to_dict(unittest.TestCase):
     """
